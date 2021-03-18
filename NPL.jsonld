@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "borrower": {
+      "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower",
+      "@type" : "rdfs:Class"
+    },
+    "corporate borrower" : {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#CorporateBorrower",
+      "@type" : "rdfs:Class"
+    },
+    "individual borrower" : {
+    "@id" : "https://www.openriskmanual.org/ns/nplo.owl#IndividualBorrower",
+      "@type" : "rdfs:Class"
+    },
+    "cp is part of group" : {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#cp_is_part_of_group",
+      "@type" : "rdf:Property"
+    },
+    "has borrowed loan" : {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#has_borrowed_loan",
+      "@type" : "rdf:Property"
+    }
+  }
+}
