@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "defines"  : {
+          "@reverse": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+        },
+    "propertyOf": {
+        "@id": "rdfs:domain",
+        "@type": "@id"
+     },
+    "propertyOn": {
+        "@id": "rdfs:range",
+        "@type": "@id"
+     }
+    },
+  "@id" : "",
+  "@type" : "http://www.w3.org/2002/07/owl#Ontology",
+  "rdf:label": "Non performing loan vocabulary",
+   "rdf:comment" : "",
+  "defines" : [
+    {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#Counterparty",
+      "@type" : "rdfs:class",
+      "rdf:comment": "",
+      "rdf:label": "CounterParty"
+    },
+    {
+      "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower",
+      "@type": "rdfs:class",
+      "rdfs:subClassOf": { "@id": "https://www.openriskmanual.org/ns/nplo.owl#Counterparty" },
+      "rdf:comment": "",
+      "rdf:label": "Borrower"
+    },
+    {
+      "@id": "https://www.openriskmanual.org/ns/nplo.owl#CorporateBorrower",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": {
+        "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower"
+      },
+      "rdf:comment": "",
+      "rdf:label": "CorporateBorrower"
+    },
+    {
+      "@id": "https://www.openriskmanual.org/ns/nplo.owl#IndividualBorrower",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": {
+        "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower"
+      },
+      "rdf:comment": "",
+      "rdf:label": "IndividualBorrower"
+    },
+    {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#cp_is_part_of_group",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "rdfs:range" : { "@id": "https://www.openriskmanual.org/ns/nplo.owl#CounterpartyGroup" },
+      "rdfs:domain" : { "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower" },
+      "owl:inverseOf": { "@id": "https://www.openriskmanual.org/ns/nplo.owl#group_includes_borrower" },
+      "rdf:label": "cp_is_part_of_group"
+    },
+    {
+      "@id" : "https://www.openriskmanual.org/ns/nplo.owl#has_borrowed_loan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "rdfs:range" : { "@id": "https://www.openriskmanual.org/ns/nplo.owl#Borrower" },
+      "rdfs:domain" : { "@id": "https://www.openriskmanual.org/ns/nplo.owl#Loan" },
+      "owl:inverseOf": { "@id": "https://www.openriskmanual.org/ns/nplo.owl#has_borrower" },
+      "rdf:label": "has_borrowed_loan"
+    }
+  ]
+}
+
